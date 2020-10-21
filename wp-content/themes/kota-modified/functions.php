@@ -13,10 +13,9 @@ function my_theme_enqueue_styles() {
     ); 
 
 
-    $parenthandleWC = 'woo-parent-style'; 
+    $parenthandleWC = 'kota-woocommerce-style'; 
     $theme = wp_get_theme();
     wp_enqueue_style( $parenthandleWC, get_template_directory_uri() . '/woocommerce.css', 
-        array(),
         $theme->parent()->get('Version')
     );
     wp_enqueue_style( 'woo-child-style', get_stylesheet_directory_uri() . '/woocommerce_child.css',
@@ -24,5 +23,19 @@ function my_theme_enqueue_styles() {
         $theme->get('Version')
     );
 }
+
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
+
+function wpb_widgets_init() {
+    register_sidebar( array(
+    'name' => 'Header Widget',
+    'id' => 'header-widget',
+    'before_widget' => '<div class="hw-widget">',
+    'after_widget' => '</div>',
+    'before_title' => '<h2 class="hw-title">',
+    'after_title' => '</h2>',
+    ) );
+    
+    }
+    add_action( 'widgets_init', 'wpb_widgets_init' );
 ?>
