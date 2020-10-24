@@ -43,19 +43,31 @@
 				if ( $kota_description || is_customize_preview() ) :
 					?>
 					<p class="site-description"><?php echo $kota_description; /* WPCS: xss ok. */ ?></p>
-				<?php endif; ?>
-			</div><!-- .site-branding -->
-			<?php
+                <?php endif; ?>
+                
+                <?php
 
-				if ( is_active_sidebar( 'header-widget' ) ) : ?>
-    				<div id="header-widget-area" class="hw-widget widget-area" role="complementary">
-						<?php dynamic_sidebar( 'header-widget' ); ?>
-    				</div>
+                    if ( is_active_sidebar( 'header-widget' ) ) : ?>
+                        <div id="header-widget-area" class="hw-widget widget-area" role="complementary">
+	                        <?php dynamic_sidebar( 'header-widget' ); ?>
+                        </div>
 	
-			<?php endif; ?>
-
+                <?php endif; ?>
+                
+			</div><!-- .site-branding -->
 			<div class="site-navbar">
-				
+				<ul class="site-search-toggle">
+					<li><i class="fa fa-search"></i></li>
+					<div class="site-search-wrap">
+						<i class="fa fa-times"></i>
+					<?php if ( class_exists( 'WooCommerce' ) ) :
+						kota_woocommerce_header_search();
+					else :
+						get_search_form();
+					endif;
+					?>
+					</div>
+				</ul>
 				<?php
 				wp_nav_menu( array(
 					'theme_location'	=> 'navbar-menu',
