@@ -6,9 +6,13 @@ Description:    Woocommerce Child Theme
 
 
 .amount {
-    color: black;
+    color: white;
 }
 
 .fa-shopping-cart {
-    color: black;
+    color: white;
+}
+
+.count {
+    color: white;
 }

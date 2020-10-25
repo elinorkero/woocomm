@@ -12,4 +12,40 @@ Tags:
 Text Domain:	kotamodified
 */
 
+.main-navigation ul {
+    justify-content: space-around;
+}
+
+body,
+input,
+select,
+optgroup,
+textarea {
+	color: #7c7c7c;
+	font-family: "Montserrat", sans-serif;
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.6;
+	letter-spacing: .02em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #262e4d;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 700;
+	clear: both;
+}
+
+.site-header {
+    background: linear-gradient(#9b7664, white);
+    box-shadow: none;
+}
+
+#site-title {
+    color: white;
+}
+
+a:visited {
+    color: white;
+}
 

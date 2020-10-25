@@ -28,6 +28,7 @@
 	<header id="masthead" class="site-header">
 		<div class="container">
 			<div class="site-branding">
+			
 				<?php
 				the_custom_logo();
 				if ( is_front_page() && is_home() ) :
